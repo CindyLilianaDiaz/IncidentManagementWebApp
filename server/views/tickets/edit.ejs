@@ -1,0 +1,199 @@
+<!--
+    File Name: edits.ejs
+    Authors: Cindy Diaz, Hae Yeon Kang
+    Website Name: Manage Support Website
+    File Description: Ticket edit page (Admin only)
+-->
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<main class="main">
+<div class="container white-bg">  
+    <h1 class="text-center">Ticket Details:  #<%= ticket.ticketNumber %></h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <% if(typeU == 'Customer') var isDisabled = "disabled"; %>
+            <form method="post">
+                <fieldset class="form-group">
+                    <label for="ticketTitle">Ticket Title: *</label>
+                    <input class="form-control" type="text" name="ticketTitle" required value="<%= ticket.ticketTitle %>" disabled/>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="ticketDescription">Ticket Description: *</label>
+                    <textarea class="form-control" name="ticketDescription" rows="4" required disabled><%= ticket.ticketDescription %></textarea />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="ticketUrgency">Ticket Urgency: *</label>
+                    <% if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Closed') { %>
+                        <select class="form-control" name="ticketUrgency" id="sel1" disabled <%=isDisabled%>>
+                    <% } else { %>
+                        <select class="form-control" name="ticketUrgency" id="sel1" <%=isDisabled%>>
+                    <% } %>
+                        <% if (ticket.ticketUrgency == 'HIGH') { %>
+                            <option>LOW</option>
+                            <option>MEDIUM</option>
+                            <option selected>HIGH</option>
+                        <% } else if (ticket.ticketUrgency == 'MEDIUM') {%>
+                            <option>LOW</option>
+                            <option selected>MEDIUM</option>
+                            <option>HIGH</option>
+                        <% } else if (ticket.ticketUrgency == 'LOW'){%>
+                            <option selected>LOW</option>
+                            <option>MEDIUM</option>
+                            <option>HIGH</option>
+                        <% } %>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="ticketImpact">Ticket Impact: *</label>
+                    <% if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Closed') { %>
+                        <select class="form-control" name="ticketImpact" id="sel1" disabled <%=isDisabled%>>
+                    <% } else { %>       
+                        <select class="form-control" name="ticketImpact" id="sel1" <%=isDisabled%>>
+                    <% } %>    
+                        <% if (ticket.ticketImpact == 'HIGH') { %>
+                            <option>LOW</option>
+                            <option>MEDIUM</option>
+                            <option selected>HIGH</option>
+                        <% } else if (ticket.ticketImpact == 'MEDIUM') {%>
+                            <option>LOW</option>
+                            <option selected>MEDIUM</option>
+                            <option>HIGH</option>
+                        <% } else if (ticket.ticketImpact == 'LOW') {%>
+                            <option selected>LOW</option>
+                            <option>MEDIUM</option>
+                            <option>HIGH</option>
+                        <% } %>
+                    </select>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="customerName">Customer Name: *</label>
+                    <input class="form-control" type="text" name="customerName" required value="<%= ticket.customerName %>"disabled/>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="customerPhone">Customer Phone: *</label>
+                    <input class="form-control" type="text" name="customerPhone" required value="<%= ticket.customerPhone %>"disabled/>
+                </fieldset>
+                <% if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Closed') { %>
+                <fieldset class="form-group">
+                    <label for="ticketStatus">Ticket Status: *</label>
+                    <select class="form-control" name="ticketStatus" id="sel2" disabled>
+                        <option>New</option>
+                        <option>Picked Up</option>
+                        <option>Assigned</option>
+                        <option>Resolved</option>
+                        <option selected>Closed</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="comment">Comment: *</label>
+                    <textarea class="form-control" name="comment" rows="3" required disabled></textarea />
+                </fieldset>
+                
+                <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Resolved') {%>
+                <fieldset class="form-group">
+                    <label for="ticketStatus" >Ticket Status: *</label>
+                    <select class="form-control" name="ticketStatus" id="sel2">
+                        <option>New</option>
+                        <option>Picked Up</option>
+                        <option>Assigned</option>
+                        <option selected>Resolved</option>
+                        <option>Closed</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="comment">Comment: *</label>
+                    <textarea class="form-control" name="comment" rows="3" required <%=isDisabled%>></textarea />
+                </fieldset>
+                <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Assigned') {%>
+                <fieldset class="form-group">
+                    <label for="ticketStatus">Ticket Status: *</label>
+                    <select class="form-control" name="ticketStatus" id="sel2" <%=isDisabled%>>
+                        <option>New</option>
+                        <option>Picked Up</option>
+                        <option selected>Assigned</option>
+                        <option>Resolved</option>
+                        <option>Closed</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="comment">Comment: *</label>
+                    <textarea class="form-control" name="comment" rows="3" required <%=isDisabled%>></textarea />
+                </fieldset>
+                <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Picked Up') {%>
+                <fieldset class="form-group">
+                    <label for="ticketStatus">Ticket Status: *</label>
+                    <select  class="form-control" name="ticketStatus" id="sel2" <%=isDisabled%>>
+                        <option>New</option>
+                        <option selected>Picked Up</option>
+                        <option>Assigned</option>
+                        <option>Resolved</option>
+                        <option>Closed</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="comment">Comment: *</label>
+                    <textarea class="form-control" name="comment" rows="3" required <%=isDisabled%>></textarea />
+                </fieldset>
+                <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'New') {%>
+                <fieldset class="form-group">
+                    <label for="ticketStatus">Ticket Status: *</label>
+                    <select  class="form-control" name="ticketStatus" id="sel2" <%=isDisabled%>>
+                        <option selected>New</option>
+                        <option>Picked Up</option>
+                        <option>Assigned</option>
+                        <option>Resolved</option>
+                        <option>Closed</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="comment">Comment: *</label>
+                    <textarea class="form-control" name="comment" rows="3" required <%=isDisabled%>></textarea />
+                </fieldset>
+                <% } %>
+
+                <fieldset class="form-group text-right">
+                    <% if(ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  != 'Closed'){%>
+                    <button type="submit" class="col-sm-offset-2 btn btn-submit">Submit</button>
+                    <% }%>
+                    <a href="/tickets">
+                        <input type="button" class="btn btn-delete" value="Cancel"/>
+                    </a>
+                    
+                </fieldset>
+            </form>
+        </div>   
+        <div class="col-sm-6">
+            <h3>Incident Narrative:</h3>
+                <table class="table table-striped">
+                    <thead>                      
+                        <tr>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i = 0; i < ticket.incidentNarrative.length; i++) { %>
+                            <tr>
+                                <td><%= ticket.incidentNarrative[i].commentDate.toDateString() %></td>
+                                <td><%= ticket.incidentNarrative[i].ticketStatus %></td>
+                                <td><%= ticket.incidentNarrative[i].comment %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    
+</div> <!--./white-bg-->
+</main>
+<% include ../partials/footer.ejs %>

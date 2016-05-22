@@ -1,0 +1,39 @@
+<!--
+    File Name: index.ejs
+    Authors: Cindy Diaz, Hae Yeon Kang
+    Website Name: Manage Support Website
+    File Description: User main page where admin can see the list of users.
+-->
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<main class="main">
+    <div class="container">
+        <div class="row white-bg">
+            <div class="col-md-12">
+                <h2>Users</h2><br />
+                <p>To add a new user, <a href="/users/add">Click here.</a></p>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <thead> <!-- table header -->
+                        <th>Display Name</th><th>Username</th><th>Password</th><th>Email</th><th>Type</th><th>Updated</th><th>Created</th>
+                    </thead>
+                    <tbody> <!-- table body. Go through the users array passed from the route -->
+                        <% for (var i = 0; i < users.length; i++) { %>
+                            <tr>
+                                <td><a href="/users/<%= users[i]._id %>" title="Edit User"><%= users[i].displayName %></a></td>
+                                <td><%= users[i].username %></td>
+                                <td><%= users[i].password %></td>
+                                <td><%= users[i].email %></td>
+                                <td><%= users[i].type %></td>
+                                <td><%= users[i].updated.toDateString() %></td>
+                                <td><%= users[i].created.toDateString() %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div> <!-- .col-md-12 -->
+        </div> <!-- .row -->
+    </div> <!-- .container -->
+</main>
+<% include ../partials/footer.ejs %>

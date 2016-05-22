@@ -1,0 +1,60 @@
+<!--
+    File Name: edit.ejs
+    Authors: Cindy Diaz, Hae Yeon Kang
+    Website Name: Manage Support Website
+    File Description: edit page where user can edit their personal information.
+-->
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<main class="main">
+    <div class="container">
+        <div class="wrapper">
+            <form method="post" class="form-signin panel">
+                <div class="row text-center bol"><i class="fa fa-circle"></i></div>
+                <h3 class="form-signin-heading text-center">
+                   <img src="../Assets/bug.png" alt="Manage Support Logo" width="120px"/>
+                </h3>
+                <hr>
+                <h3 class="form-signin-heading text-center">Edit Account</h3><br>
+                <p class="red-required">Every field is required *</p> 
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user"></i></span>
+                        <input name="username" class="form-control" required value="<%= user.username %>" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key"></i></span>
+                        <input name="password" class="form-control" required value="<%= user.password %>" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope-o"></i></span>
+                        <input name="email" class="form-control" required value="<%= user.email %>" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-hashtag"></i></span>
+                        <input name="displayName" class="form-control" required value="<%= user.displayName %>" />
+                    </div>
+                    <div class="form-group text-center">
+                        <label class="userTypeLabel" for="type">User Type: </label>
+                        <% if(user.type == "Customer"){ %>
+                            <input type="radio" name="type" value="Customer" Checked disabled> Customer
+                            <input type="radio" name="type" value="Admin" disabled> Admin
+                        <% } else if(user.type == "Admin"){ %>
+                            <input type="radio" name="type" value="Customer" disabled> Customer
+                            <input type="radio" name="type" value="Admin" Checked disabled> Admin
+                        <% } %>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-submit"> Edit </button>
+                        <button type="reset" class="btn btn-reset">Reset</button>
+                        <a href="/users/delete/<%= user._id %>" title="Delete" onclick="return confirm('Are you sure you want to delete this?');">
+                            <button type="button" class="btn btn-delete">Delete</button>
+                        </a>
+                        <a href="/">
+                            <button type="button" class="btn btn-cancel">Cancel</button>
+                        </a>
+                    </div>
+            </form>
+        </div> <!-- .wrapper -->
+    </div> <!-- container -->
+</main>
+<% include ../partials/footer.ejs %>

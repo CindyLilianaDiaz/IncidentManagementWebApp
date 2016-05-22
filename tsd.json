@@ -1,0 +1,90 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "express/express.d.ts": {
+      "commit": "2f47c75835b837777a85287611703d683b0aaa83"
+    },
+    "node/node.d.ts": {
+      "commit": "2f47c75835b837777a85287611703d683b0aaa83"
+    },
+    "mime/mime.d.ts": {
+      "commit": "2f47c75835b837777a85287611703d683b0aaa83"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "2f47c75835b837777a85287611703d683b0aaa83"
+    },
+    "orchestrator/orchestrator.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "q/Q.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "gulp-util/gulp-util.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "vinyl/vinyl.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "chalk/chalk.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "through2/through2.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "morgan/morgan.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "cookie-parser/cookie-parser.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "gulp-debug/gulp-debug.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "gulp-inject/gulp-inject.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "gulp-typescript/gulp-typescript.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "gulp-sourcemaps/gulp-sourcemaps.d.ts": {
+      "commit": "44c9273e1e92bc95368f599d1dcda9f560a68956"
+    },
+    "gulp-nodemon/gulp-nodemon.d.ts": {
+      "commit": "2f47c75835b837777a85287611703d683b0aaa83"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "9c2dd05cb4d773849de6f2a9de822e10f6229de8"
+    },
+    "sendgrid/sendgrid.d.ts": {
+      "commit": "0cd5f0a1482dc3149f5446b1d885ef6ac7c57720"
+    },
+    "connect-flash/connect-flash.d.ts": {
+      "commit": "0cd5f0a1482dc3149f5446b1d885ef6ac7c57720"
+    },
+    "express-session/express-session.d.ts": {
+      "commit": "0cd5f0a1482dc3149f5446b1d885ef6ac7c57720"
+    },
+    "passport/passport.d.ts": {
+      "commit": "2f47c75835b837777a85287611703d683b0aaa83"
+    },
+    "express-serve-static-core/express-serve-static-core.d.ts": {
+      "commit": "2f47c75835b837777a85287611703d683b0aaa83"
+    },
+    "passport-local/passport-local.d.ts": {
+      "commit": "2f47c75835b837777a85287611703d683b0aaa83"
+    },
+    "bcrypt-nodejs/bcrypt-nodejs.d.ts": {
+      "commit": "926711691d213f76a483b36dd728e80be1257717"
+    }
+  }
+}

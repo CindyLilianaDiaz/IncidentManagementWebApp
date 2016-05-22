@@ -1,0 +1,71 @@
+<!--
+    File Name: add.ejs
+    Authors: Cindy Diaz, Hae Yeon Kang
+    Website Name: Manage Support Website
+    File Description: Add ticket page
+-->
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<main class="main">
+<div class="container white-bg">
+    
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="wrapper">
+            <form method="post" class="form-contact">
+            <div class="row text-center bol"><i class="fa fa-circle"></i></div>
+                <h3 class="form-signin-heading text-center">Submit New Support Ticket</h3>
+                <fieldset class="form-group">
+                    <label for="ticketTitle" >Ticket Title: *</label>
+                    <input type="text" class="form-control" name="ticketTitle" required />
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="ticketDescription">Ticket Description: *</label>
+                    <textarea class="form-control" name="ticketDescription" rows="5" required></textarea />
+                </fieldset>
+
+
+                <fieldset class="form-group">
+                    <label for="ticketUrgency">Ticket Urgency: *</label>
+                    <select  class="form-control"  name="ticketUrgency" id="sel1">
+                        <option>LOW</option>
+                        <option>MEDIUM</option>
+                        <option>HIGH</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="ticketImpact">Ticket Impact: *</label>
+                    <select  class="form-control"  name="ticketImpact" id="sel1">
+                        <option>LOW</option>
+                        <option>MEDIUM</option>
+                        <option>HIGH</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="customerName">Customer Name: *</label>
+                    <input  class="form-control"  type="text" name="customerName" required />
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="customerPhone">Customer Phone: *</label>
+                    <input  class="form-control"  type="text" name="customerPhone" required />
+                </fieldset>
+                
+                <fieldset class="form-group text-right">
+                    <button type="submit" class="col-sm-offset-2 btn btn-submit">Submit</button>                    
+                    <input type="reset" class="btn btn-reset" value="Reset"/>
+                    <a href="/tickets">
+                        <input type="button" class="btn btn-delete" value="Cancel"/>
+                    </a>
+                </fieldset>
+            </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</main>
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,41 @@
+<!--
+    File Name: closed.ejs
+    Authors: Cindy Diaz, Hae Yeon Kang
+    Website Name: Manage Support Website
+    File Description: Closed tickets page
+-->
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<main class="container">
+    <div class="white-bg">
+    <img  class="center-block" src="/Assets/bug.png" width="120px">
+    <h1> Closed Tickets</h1>
+        <a href="/tickets">Go Back</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ticket Number</th>
+                    <th>Date Submitted</th>
+                    <th>Level of Priority</th>
+                    <th>Ticket Title</th>
+                    <th>Customer Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var i = 0; i < tickets.length; i++) { %>
+                    
+                    <tr>
+                        <td><a href="/tickets/<%= tickets[i]._id %>"><%= tickets[i].ticketNumber %></a></td>
+                        <td><%= tickets[i].createdOn.toDateString() %></td>
+                        <td><%= tickets[i].ticketPriority %></td>
+                        <td><%= tickets[i].ticketTitle %></td>
+                        <td><%= tickets[i].customerName %></td>
+                        <td><% if (tickets[i].incidentNarrative !== undefined){ %> <%= tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus %> <%}%></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+   </div> <!--./white-bg-->
+</main>
+<% include ../partials/footer.ejs %>

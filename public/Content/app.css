@@ -1,0 +1,219 @@
+/*  
+    File Name: Custom CSS Style Sheet
+    Authors: Hae Yeon (Lucy) Kang and Cindy Diaz
+    Website name: Manage Support Website
+    Description: This file contains all our custom css
+*/
+html{
+    position: relative;
+}
+body{
+    /*background-image: url("../Assets/sprinkles.png");
+    background-repeat: repeat;*/
+    background-color: #252839;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+}
+
+.main {
+    /* sticky footer */
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto 100px;
+}
+
+.footer{
+    height: 60px;
+    background-color: darkgray;
+}
+/*Navbar Changes*/
+.navbar-nav>li>a{
+    color: white;
+}
+.navbar-nav>li>a:hover{
+    background-color: #f2b632;
+}
+.navbar-nav>li>a:active{
+    background-color: #f2b632;
+}
+.navbar-transparent .navbar-text {
+    padding-top: 3px;
+    color: beige;
+}
+.navbar-transparent .navbar-toggle:focus, .navbar-transparent .navbar-toggle:hover{
+    background-color: #f2b632;
+}
+.navbar-transparent .navbar-toggle{
+    border-color: whitesmoke;
+}
+.navbar-transparent .navbar-nav>.active>a,
+.navbar-transparent .navbar-nav>.active>a:focus,
+.navbar-transparent .navbar-nav>.active>a:hover{
+    background-color: #f2b632;
+    background-image: none;
+}
+hr{
+    max-width: 50px;
+    border-color: #f2b632;
+    border-width: 3px;
+}
+thead{
+    background-color: #60B99A;
+}
+
+/* Panels */
+.panel {
+    background-color: #677077;
+    padding-bottom: 30px;
+}
+.panel-body-white{
+    background-color: white;
+}
+.panel-green {
+    border-color: #5cb85c;
+}
+.panel-green .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+.panel-red {
+    border-color: #d9534f;
+}
+.panel-red .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+.white-bg{
+    background-color: white;
+    padding: 2em;
+}
+.black-bg{
+    background-color: lightgrey;
+    color: black;
+}
+.gray-bg{
+    background-color: #424648;
+    color: white;
+}
+
+/* Buttons */
+.btn{
+    color: white;
+}
+.button-group{
+    padding-top: 4em;
+}
+.btn-submit {
+    background-color: #f2b632;
+}
+.btn-cancel {
+    background-color: #FDFFFC;
+    color: #252839;
+}
+.btn-reset {
+    background-color: #41EAD4;
+}
+
+.btn-delete {
+    background-color: #F71735;
+}
+
+.btn-block{
+    border-radius: 0px;
+    margin-top: 25px;
+    background-color: #41EAD4;
+    border: none;
+}
+
+.btn-block:hover, .btn-reset:hover, .btn-delete:hover, .btn-submit:hover, .btn-cancel:hover{
+    background-color: #FF9F1C;
+}
+
+/* Form */
+.red-required{
+    color: darkred;
+}
+
+/* Landing Page */
+.wrapper{
+    margin-top: 45px;
+}
+.form-signin{
+  max-width: 420px;
+  padding: 30px 38px 38px;
+  margin: 0 auto;
+  border: 1px solid #cccccc;
+}
+
+.form-signin-heading{
+    font-size: 35pt;
+}
+
+.input-group{
+    height: 45px;
+    margin-bottom: 15px;
+    border-radius: 0px;
+    color: #60B99A;
+}
+.form-control{
+    height: 45px;
+    color: #60B99A;
+}
+.input-group:hover span i{
+    color: #60B99A;
+}
+
+.bol{
+    position: relative;
+    margin-top: -40px;
+    color: #60B99A;
+}
+
+/* Register */
+.userTypeLabel {
+    padding-right: 10px;
+}
+
+/* Contact Page */
+.form-contact{
+  max-width: 1000px;
+  padding: 30px 38px 38px;
+  margin: 0 auto;
+  border: 1px solid #cccccc;
+}
+
+/* Others */
+.image-bg-fluid-height {
+    background: url('/Assets/banner-office-resize.jpg') no-repeat center center scroll;
+    padding: 100px 0;
+    height: 845px;
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    color: white;  
+}
+.image-bg-fluid-height h1{
+    font-size: 40pt;
+}
+.img-center {
+    margin: 0 auto;
+}
+.two-colors-banner{
+    padding: 2em;
+    height: 300px;
+}
+.container .text-muted {
+    margin: 20px 0;
+    color: black;
+}
+.large-number{
+    font-size: 40pt;
+}
+.textarea {
+    resize: none;
+}

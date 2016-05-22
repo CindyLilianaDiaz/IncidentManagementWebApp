@@ -1,0 +1,96 @@
+<!--
+    File Name: idex.ejs
+    Authors: Cindy Diaz, Hae Yeon Kang
+    Website Name: Manage Support Website
+    File Description: Dashboard Ticket page (Admin only)
+-->
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<main class="container">
+    <div class="white-bg">
+    <img  class="center-block" src="/Assets/bug.png" style="width:150px">
+    <h1>Dashboard <%= typeU%></h1>
+    <div class="row">
+    <div class="col-sm-4">
+        <div class = "panel panel-primary  panel-body-white">
+            <div class = "panel-heading">
+                <i class="fa fa-envelope fa-5x"></i>
+                <h3 class = "panel-title text-right">
+                    <% var number = 0; 
+                    for (var i = 0; i < tickets.length; i++) { 
+                            if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  == 'New')
+                            {number++;}
+                    }%> 
+                    <span class="large-number"><%= number %></span> New Incidents</h3>
+            </div>
+            <div class = "panel-body">
+            Total of incidents assigned
+            </div>
+        </div>
+    </div>     
+    <div class="col-sm-4">
+        <div class = "panel panel-green  panel-body-white">
+            <div class = "panel-heading">
+                <i class="fa fa-spinner fa-5x"></i>
+                <h3 class = "panel-title text-right">
+                    <% var number = 0; 
+                    for (var i = 0; i < tickets.length; i++) { 
+                            if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  != 'New' && tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  != 'Closed' )
+                            {number++;}
+                    }%> 
+                    <span class="large-number"><%= number %></span> In Progress </h3>
+            </div>
+            <div class = "panel-body">
+            Total of incidents assigned
+            </div>
+        </div>
+    </div> 
+    <div class="col-sm-4">
+        <div class = "panel panel-red  panel-body-white">
+            <div class = "panel-heading">
+                <i class="fa fa-check-square fa-5x"></i>
+                <h3 class = "panel-title text-right">
+                    <% var number = 0; 
+                    for (var i = 0; i < tickets.length; i++) { 
+                            if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  == 'Closed')
+                            {number++;}
+                    }%> 
+                    <span class="large-number"><%= number %></span> Closed Incidents</h3>
+            </div>
+            <div class = "panel-body">
+            Total of closed incidents
+            </div>
+        </div>
+    </div>  
+    </div>
+        <!--<a href="/tickets/add">Add a New Ticket</a>-->
+        <a class="pull-right" href="/tickets/closed">View Closed Tickets</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ticket Number</th>
+                    <th>Date Submitted</th>
+                    <th>Level of Priority</th>
+                    <th>Ticket Title</th>
+                    <th>Customer Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var i = 0; i < tickets.length; i++) { %>
+                    <% if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus != 'Closed'){ %>
+                    <tr>
+                        <td><a href="/tickets/<%= tickets[i]._id %>"><%= tickets[i].ticketNumber %></a></td>
+                        <td><%= tickets[i].createdOn.toDateString() %></td>
+                        <td><%= tickets[i].ticketPriority %></td>
+                        <td><%= tickets[i].ticketTitle %></td>
+                        <td><%= tickets[i].customerName %></td>
+                        <td><% if (tickets[i].incidentNarrative !== undefined){ %> <%= tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus %> <%}%></td>
+                    </tr>
+                    <% } %>
+                <% } %>
+            </tbody>
+        </table> 
+   </div> <!--./white-bg-->
+</main>
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,59 @@
+<!--
+    File Name: register.ejs
+    Authors: Cindy Diaz, Hae Yeon Kang
+    Website Name: Manage Support Website
+    File Description: Register page where user can register as customers unless they are admin user.
+-->
+<% include partials/header.ejs %>
+    <% include partials/navbar.ejs %>
+        <!-- Render the Registration form  -->
+        <main class="main">
+            <!-- Display flash messages  -->
+            <% if (messages.length > 0) { %>
+                <div class="alert alert-danger">
+                    <%= messages %>
+                </div>
+            <% } %>
+            <div class="container">
+                <div class="wrapper">
+                    <form method="post" class="form-signin panel">
+                     <div class="row text-center bol"><i class="fa fa-circle"></i></div>
+                     <h3 class="form-signin-heading text-center">
+                        <img src="../Assets/bug.png" alt="Manage Support Logo" width="120px"/>
+                     </h3>
+                        <hr>
+                        <h3 class="form-signin-heading text-center">Registration</h3><br>
+                            <p class="red-required">Every field is required *</p>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user"></i></span>
+                                    <input name="username" type="text" class="form-control" required placeholder="Username"/>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-key"></i></span>
+                                    <input name="password" type="password" class="form-control" required placeholder="Password"/>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope-o"></i></span>
+                                    <input name="email" type="email" class="form-control" required autofocus placeholder="Email" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-hashtag"></i></span>
+                                    <input name="displayName" type="text" class="form-control" required placeholder="Display Name"/>
+                                </div>
+                                <div class="form-group text-center">
+                                    <label class="userTypeLabel" for="type">User Type: </label>
+                                    <input type="radio" name="type" value="Customer" checked> Customer
+                                    <input type="radio" name="type" value="Admin" <% if(type === "Customer" || !displayName){ %> disabled <% } %> /> Admin
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-submit">Register</button>
+                                    <button type="reset" class="btn btn-reset"><i class="fa fa-eraser"></i> Reset</button>
+                                    <a href="/">
+                                        <button type="button" class="btn btn-cancel">Cancel</button>
+                                    </a>
+                                </div>
+                    </form>
+                </div> <!-- wrapper -->
+            </div><!-- container -->
+        </main>
+        <% include partials/footer.ejs %>

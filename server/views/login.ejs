@@ -1,0 +1,37 @@
+<!--
+    File Name: login.ejs
+    Authors: Cindy Diaz, Hae Yeon Kang
+    Website Name: Manage Support Website
+    File Description: Login page where 2 different types of users could log in.
+-->
+<% include partials/header.ejs %>
+<% include partials/navbar.ejs %>
+     <main class="main">
+         <!-- Display flash messages  -->
+         <% if (messages.length > 0) { %>
+             <div class="alert alert-danger"><%= messages %></div>
+         <% } %>
+         <div class="container">
+             <div class="wrapper">
+                 <form method="post" class="form-signin panel">
+                     <div class="row text-center bol"><i class="fa fa-circle"></i></div>
+                     <h3 class="form-signin-heading text-center">
+                        <img src="../Assets/bug.png" alt="Manage Support Logo" width="120px"/>
+                        <hr>
+                     </h3>
+                     <h3 class="form-signin-heading text-center">Log In</h3><br>
+                     <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" name="username" placeholder="Username" required autofocus />
+                     </div>
+                     <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-lock"></i></span>
+                        <input type="password" class="form-control" name="password" placeholder="Password" required/>         	  
+                     </div>
+                     <p>Not Registered? <a style="color: #FF9F1C" href="/register">Register here</a></p>
+                     <button class="btn btn-lg btn-block"  name="Submit" type="submit">Login</button>
+                </form>
+             </div> <!-- wrapper -->
+         </div> <!-- container -->
+    </main>
+<% include partials/footer.ejs %>
